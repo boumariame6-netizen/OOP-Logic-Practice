@@ -427,31 +427,31 @@
 
 
 
-let main = document.getElementById('data')
+// let main = document.getElementById('data')
 
-let req = new XMLHttpRequest()
+// let req = new XMLHttpRequest()
 
-req.open("GET","articles.json")
+// req.open("GET","articles.json")
 
-req.send()
+// req.send()
 
-req.onload = function () {
-    if(this.status === 200) {
-        console.log(this.responseText)
-        let data = JSON.parse(this.responseText)
-        data.forEach(ele => {
-            let div = document.createElement('div')
-            div.innerHTML += `<h1>title: ${ele.title}</h1> <hr>
-            <p>author: ${ele.author}</p>
-            <hr> <p>section: ${ele.section}</p> <hr>
-            <p>content: ${ele.content}</p>
-            `
-            main.appendChild(div)
-        });
+// req.onload = function () {
+//     if(this.status === 200) {
+//         console.log(this.responseText)
+//         let data = JSON.parse(this.responseText)
+//         data.forEach(ele => {
+//             let div = document.createElement('div')
+//             div.innerHTML += `<h1>title: ${ele.title}</h1> <hr>
+//             <p>author: ${ele.author}</p>
+//             <hr> <p>section: ${ele.section}</p> <hr>
+//             <p>content: ${ele.content}</p>
+//             `
+//             main.appendChild(div)
+//         });
 
 
-    }
-}
+//     }
+// }
 
 
 
@@ -478,3 +478,74 @@ req.onload = function () {
 //   req.onloadend = function () {
 //     console.log("Data Loaded")
 // }
+
+
+
+
+// Promise - Then, Catch And Finally
+
+// const myPromise = new Promise((resolve , reject)=>{
+//     setTimeout(()=>{
+//         reject(Error('I am The bad Promise')) ; 
+//     }, 3000)
+// })
+
+// async function readData() {
+//     console.log('befor promise')
+//     // await myP.then((resolveValue)=>{console.log(`I am ${resolveValue}`)})
+//     console.log(await myPromise.catch((err)=>(err)))
+//     console.log('after promise')
+// }
+
+// readData()
+
+
+//  try catch and finally with fetch
+
+// const myPromise = new Promise((resolve , reject)=>{
+//     setTimeout(()=>{
+//         // resolve('I am The Good Promise') ; 
+//         // reject(Error('I am The Bad Promise'))
+
+//     }, 3000)
+// })
+
+// async function readData() {
+    
+//     console.log('befor promise')
+//     try{
+//         console.log(await myPromise)
+//     }catch(err) {
+//         console.log(err)
+//     }finally{
+//          console.log('after promise')
+//     }
+    
+   
+// }
+
+// readData()
+
+// async function fetchData() {
+    
+//     console.log('befor promise')
+//     try{
+//         let res = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+        
+//         let data = await res.json()
+//         console.log(data.id)
+       
+        
+//     }catch(err) {
+//         console.log(err)
+//     }finally{
+//          console.log('after promise')
+//     }
+    
+   
+// }
+
+// fetchData()
+
+
+    
